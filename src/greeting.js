@@ -1,3 +1,3 @@
 const greet = ((name) => `Hello ${name}`)
 
-export default gret
+export default greet

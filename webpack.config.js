@@ -12,6 +12,11 @@ let conf = {
         filename: "main.js",
         publicPath: "dist/"
     },
+    devtool: 'cheap-module-eval-source-map',
+    resolve: {
+        extensions: ['.js', '.jsx']
+    },
+
     devServer: {
         overlay: true
     }

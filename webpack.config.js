@@ -16,7 +16,15 @@ let conf = {
     resolve: {
         extensions: ['.js', '.jsx']
     },
-
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                loader: 'babel-loader',
+                exclude: /node_modules/
+            }
+        ]
+    },
     devServer: {
         overlay: true
     }

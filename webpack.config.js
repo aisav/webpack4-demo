@@ -1,9 +1,4 @@
-let path = require('path')
-
-// new webpack.ProvidePlugin({
-//     $: 'jquery',
-//     jQuery: 'jquery'
-// })
+let path = require ('path')
 
 let conf = {
     entry: './src/index.js',
@@ -11,52 +6,6 @@ let conf = {
         path: path.resolve(__dirname, './dist'),
         filename: "main.js",
         publicPath: "dist/"
-    },
-    devtool: 'cheap-module-eval-source-map',
-    resolve: {
-        extensions: ['.js', '.jsx']
-    },
-    module: {
-        rules: [
-            {
-                test: /\.js$/,
-                loader: 'babel-loader',
-                exclude: /node_modules/
-            },
-            {
-                test: /\.css$/,
-                exclude: /node_modules/,
-                use: [
-                    { loader: 'style-loader' },
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            importLoaders: 1,
-                            modules: true,
-                            localIdentName: '[name]__[local]__[hash:base64:5]'
-                        }
-                    },
-                    {
-                        loader: 'postcss-loader',
-                        options: {
-                            ident: 'postcss',
-                            plugins: () => [
-                                autoprefixer({
-                                    browsers: [
-                                        "> 1%",
-                                        "last 2 versions"
-                                    ]
-                                })
-                            ]
-                        }
-                    }
-                ]
-
-            }
-        ]
-    },
-    devServer: {
-        overlay: true
     }
 }
 

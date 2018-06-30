@@ -1,3 +1,3 @@
-const greet = ((name) => `Hello ${name}`)
+const greet = ((parameter) => $('.ES6Import').html(parameter))
 
 export default greet
